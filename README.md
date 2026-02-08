@@ -1,7 +1,7 @@
 # Deep Fake Videos Detection Using Multimodal Approaches
 
 ## Overview
-This repository contains a comprehensive system designed for the detection of deep fake videos utilizing a multimodal approach. This system leverages various models to analyze both visual and auditory features, improving the accuracy and reliability of detection.
+This repository contains a comprehensive system designed for the detection of deep fake videos utilizing a multimodal approach. This system leverages various models to analyze both visual and auditory features, improving the accuracy and reliability of detection.we achive 99.5% accuracy of fusion model of 4 different models 
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -15,42 +15,32 @@ This repository contains a comprehensive system designed for the detection of de
 Deepfake technology poses a significant threat by enabling the creation of highly realistic synthetic videos. The multimodal deepfake detection system aims to combat this challenge by integrating multiple models and techniques to identify such manipulations effectively.
 
 ## Models Used
-1. **Convolutional Neural Networks (CNNs)**: These are employed to extract and analyze spatial features from video frames.
-2. **Recurrent Neural Networks (RNNs)**: Used for understanding temporal sequences, they help in analyzing changes across frames over time.
-3. **Audio Analysis Models**: Leveraging audio input to detect discrepancies between audio and visual components.
-4. **Multimodal Integration**: Techniques to combine the outputs of different models effectively to enhance detection accuracy.
+1. Video Model (EfficientNet-B0): Detects facial frame inconsistencies
+2.Audio Model: Analyzes speech patterns and audio anomalies
+3.Metadata Analysis: Extracts digital artifacts from video files
+4.Fusion Model: Combines predictions from all three approaches
+## Dataset Information
+1.FakeAVCeleb v1.2 dataset structure
+2.Class distribution (Real vs Fake videos)
+3.Data balancing strategy explanation
+4.Train/validation/test split ratios
 
 ## Training Results
-- **Dataset Used**: The system was trained on a custom dataset of real vs. deepfake videos, consisting of [insert number] examples.
-- **Accuracy**: Achieved an accuracy of [insert accuracy]% on the validation set.
-- **F1 Score**: The model obtained a balanced F1 score of [insert F1 score] which highlights its precision and recall balancing.
-- **Loss Function**: The cross-entropy loss was used to evaluate the model's performance during training.
-
-## Usage Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yasirrHanif/deep-fake-videos-detection-by-using-multimodel-
-   cd deep-fake-videos-detection-by-using-multimodel-
-   ```
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the training script:
-   ```bash
-   python train.py
-   ```
-4. To predict on a new video:
-   ```bash
-   python predict.py --video_path path_to_video
-   ```
-
-## Contributing
-Contributions are welcome! Please submit a pull request or open an issue to discuss potential improvements.
+- Actual results from your training:
+99% Accuracy on validation set
+Precision/Recall/F1-scores for both classes
+Training loss reduction trajectory
+Confusion matrix visualization
+##  Technical Stack
+Python 3.11+
+PyTorch with CUDA support
+TorchVision & timm (EfficientNet)
+OpenCV for video processing
+Librosa for audio analysis
+Scikit-learn for metrics
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-- [References to papers, tools, libraries utilized in this project]
-- Special thanks to [contributors, mentors, or supporters]
+
+
